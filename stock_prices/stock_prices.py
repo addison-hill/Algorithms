@@ -6,17 +6,18 @@ import argparse
 def find_max_profit(prices):
     # make variables for current_min_price_so_far and max_profit_so_far
     cur_min = 0
-    max_profit = [] # <----- we make this an array of all the profits and then find largest one. Thanks Ethan from help channel lol
+    # <----- we make this an array of all the profits and then find largest one.
+    max_profit = []
 
     # To fill the max profit, we now need to set the cur_min and compare to each element in the array. Finding each profit.
     for i in range(0, len(prices) - 1):
         cur_min = prices[i]
 
-        for j in range(i+1, len(prices) -1):
-            max_profit.append(prices[j] - cur_min) # <---- This will give us all the potential profits into one list
-    
-    return max(max_profit)
+        for j in range(i+1, len(prices) - 1):
+            # <---- This will give us all the potential profits into one list
+            max_profit.append(prices[j] - cur_min)
 
+    return max(max_profit)
 
 
 if __name__ == '__main__':
